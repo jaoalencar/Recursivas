@@ -8,3 +8,5 @@
     4. Sempre que se tratar de *Memória dinâmica* usa-se ponteiros
 ***
 * Experimentando no códgio
+    * __O documunto Execicios.md possui questões proposta pelo professor__
+    * Os codigos possuem o numero da questão e um nome intuitivo todas resolvidas usando recursão
