@@ -6,15 +6,15 @@
 #include <stdlib.h>
 using namespace std;
 
-void inverteRec(const char *palavra, char *copia, int &i){
-    if (*palavra == '\0')
-    {
-        return;
+    void inverteRec(const char *palavra, char *copia, int &i){
+        if (*palavra == '\0')
+        {
+            return;
+        }
+        inverteRec(palavra+1, copia, i);
+        copia[i] = *palavra;
+        i++;
     }
-    inverteRec(palavra+1, copia, i);
-    copia[i] = *palavra;
-    i++;
-}
 
 char *inverter(const char *palavra){
     //Coleta o tamanho da palavra
@@ -34,17 +34,16 @@ char *inverter(const char *palavra){
     return copia;
 }
 
-bool isPalindromoRec(const char *entrada,const char *saida){
-    if (*entrada == '\0'){
-        return true;
+    bool isPalindromoRec(const char *entrada,const char *saida){
+        if (*entrada == '\0'){
+            return true;
+        }
+        
+        return (*entrada==*saida) && isPalindromoRec(entrada + 1, saida + 1);
     }
-    
-    return (*entrada==*saida) && isPalindromoRec(entrada + 1, saida + 1);
-}
 
 bool isPalindromo(const char *palavra){
     char *invertida = inverter(palavra);
-    
     return isPalindromoRec(palavra, invertida);
 }
 
